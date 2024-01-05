@@ -41,5 +41,7 @@
     <!-- Plante customise -->
     <string name="item_plant_name">Nom de la plante</string>
     <string name="item_plant_description">Description de la plante</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 </resources>

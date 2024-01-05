@@ -1,36 +1,25 @@
 package com.example.planty
 
+import android.app.FragmentManager
 import android.os.Bundle
 import androidx.activity.ComponentActivity
-import androidx.activity.compose.setContent
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.Surface
-import androidx.compose.material3.Text
-import androidx.compose.runtime.Composable
-import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.Preview
-import com.example.planty.ui.theme.PlantyTheme
+import com.example.planty.fragments.HomeFragment
+
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContent {
-            PlantyTheme {
-                // A surface container using the 'background' color from the theme
-                Surface(modifier = Modifier.fillMaxSize(), color = MaterialTheme.colorScheme.background) {
-                    Greeting("Patou")
-                }
-            }
-        }
+        setContentView(R.layout.activity_main)
+
+        // injecter le fragment dans notre boite (fragment_container)
+        val transaction = fragmentManager.beginTransaction()
+        transaction.replace(R.id.fragment_container, HomeFragment())
+        transaction.addToBackStack(null)
+        transaction.commit()
     }
+
+
 }
 
-@Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
-    Text(
-            text = "Hello $name!",
-            modifier = modifier
-    )
-}
+
 
