@@ -15,5 +15,12 @@
         android:scaleType="centerCrop"
         android:src="@drawable/trending1"/>
 
+    <ImageView
+        android:id="@+id/star_icon"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_margin="@dimen/item_margin"
+        android:tint="@color/Yellow"
+        android:src="@drawable/ic_unstar"/>
 
 </androidx.cardview.widget.CardView>
