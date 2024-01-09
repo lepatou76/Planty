@@ -10,6 +10,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.planty.MainActivity
 import com.example.planty.PlantModel
+import com.example.planty.PlantRepository
 import com.example.planty.R
 
 class PlantAdapter(
@@ -39,6 +40,8 @@ class PlantAdapter(
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         // recupérer les informations de la plante
         val currentPlant = plantList[position]
+        // recupérer le repository
+        val repo = PlantRepository()
         // utiliser glide pour recuperer image a partir de son lien -> composant
         Glide.with(context).load(Uri.parse(currentPlant.imageUrl)).into(holder.plantImage)
         // mettre a jour le nom de la plante
@@ -52,6 +55,15 @@ class PlantAdapter(
         else {
             holder.starIcon.setImageResource(R.drawable.ic_unstar)
         }
+        // rajouter une interaction sur cette étoile
+        holder.starIcon.setOnClickListener{
+            // inverser si le bouton est like ou non
+            currentPlant.liked = !currentPlant.liked
+            // mettre a jour l'objet plante
+            repo.updatePlant(currentPlant)
+
+        }
+
 
 
     }
