@@ -25,16 +25,12 @@
         android:text="@string/home_page_title"
         app:layout_constraintStart_toStartOf="@+id/app_title"
         app:layout_constraintTop_toBottomOf="@+id/app_title"
-        style="@style/TitleTextStyle"
-        />
+        style="@style/TitleTextStyle" />
 
     <FrameLayout
         android:id="@+id/fragment_container"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="100dp"
-        />
-
-
+        android:layout_marginTop="80dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
