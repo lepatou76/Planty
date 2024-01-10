@@ -33,4 +33,42 @@
         android:layout_height="match_parent"
         android:layout_marginTop="80dp" />
 
+    <LinearLayout
+        android:orientation="horizontal"
+        android:id="@+id/navigation_bar"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:background="@color/Green"
+        android:padding="@dimen/item_margin"
+        android:gravity="center"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <ImageView
+            android:id="@+id/button_home_page"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="@dimen/default_margin"
+            android:layout_marginRight="@dimen/default_margin"
+            android:tint="@color/black"
+            android:src="@drawable/ic_home"/>
+        <ImageView
+            android:id="@+id/button_collection_page"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="50dp"
+            android:layout_marginRight="50dp"
+            android:tint="@color/lightGray"
+            android:src="@drawable/ic_star"/>
+        <ImageView
+            android:id="@+id/button_add_plant_page"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:tint="@color/lightGray"
+            android:layout_marginLeft="@dimen/default_margin"
+            android:layout_marginRight="@dimen/default_margin"
+            android:src="@drawable/ic_plus"/>
+
+    </LinearLayout>
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>
