@@ -4,6 +4,7 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import com.example.planty.fragments.HomeFragment
 import android.app.FragmentTransaction
+import com.example.planty.fragments.CollectionFragment
 
 
 class MainActivity : ComponentActivity() {
@@ -18,7 +19,7 @@ class MainActivity : ComponentActivity() {
         repo.updateData {
             // injecter le fragment dans notre boite (fragment_container)
             val transaction = fragmentManager.beginTransaction()
-            transaction.replace(R.id.fragment_container, HomeFragment(this))
+            transaction.replace(R.id.fragment_container, CollectionFragment(this))
             transaction.addToBackStack(null)
             transaction.commit()
         }
